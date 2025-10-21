@@ -1,11 +1,17 @@
 <?php
 /**
  * Plugin Name: tva Duplicate Pro
- * Description: Erstellt Kopien von Seiten, Beiträgen und WooCommerce-Produkten mit einem Klick
+ * Plugin URI: https://www.tva.sg/plugins/tva-duplicate-pro
+ * Description: Easily duplicate posts, pages, and WooCommerce products with a single click
  * Version: 2.1
  * Author: tva.sg
  * Author URI: https://www.tva.sg
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 5.0
+ * Requires PHP: 7.2
  * Text Domain: tva-duplicate-pro
+ * Domain Path: /languages
  */
 
 namespace tvaDuplicatePro;
@@ -77,18 +83,18 @@ class tvaDuplicatePro {
     public function duplicatePostAsDraft() {
         // Sicherheitscheck
         if (!isset($_GET['post']) || !isset($_GET['duplicate_nonce'])) {
-            wp_die('No post to duplicate has been provided!');
+            wp_die(__('No post to duplicate has been provided!', 'tva-duplicate-pro'));
         }
 
         if (!wp_verify_nonce($_GET['duplicate_nonce'], basename(__FILE__))) {
-            wp_die('Security check failed!');
+            wp_die(__('Security check failed!', 'tva-duplicate-pro'));
         }
 
         $post_id = absint($_GET['post']);
         $post = get_post($post_id);
 
         if (!$post) {
-            wp_die('Post creation failed, could not find original post.');
+            wp_die(__('Post creation failed, could not find original post.', 'tva-duplicate-pro'));
         }
 
         // Erstelle den duplizierten Post
