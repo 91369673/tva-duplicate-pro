@@ -1,5 +1,5 @@
 === tva Duplicate Pro ===
-Contributors: (your-wordpress-org-username)
+Contributors: tva91369673
 Tags: duplicate, clone, copy, post, page, woocommerce
 Requires at least: 5.0
 Tested up to: 6.8.2
