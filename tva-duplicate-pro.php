@@ -11,7 +11,6 @@
  * Requires at least: 5.0
  * Requires PHP: 7.2
  * Text Domain: tva-duplicate-pro
- * Domain Path: /languages
  */
 
 namespace tvaDuplicatePro;

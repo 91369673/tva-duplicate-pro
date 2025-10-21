@@ -2,7 +2,7 @@
 Contributors: tva91369673
 Tags: duplicate, clone, copy, post, page, woocommerce
 Requires at least: 5.0
-Tested up to: 6.8.2
+Tested up to: 6.8
 Stable tag: 2.1
 Requires PHP: 7.2
 License: GPLv2 or later
