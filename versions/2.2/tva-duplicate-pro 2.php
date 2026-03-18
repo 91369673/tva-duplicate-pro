@@ -2,7 +2,7 @@
 /**
  * Plugin Name: tva Duplicate Pro
  * Description: Creates copies of pages, posts and WooCommerce products with a single click
- * Version: 2.1
+ * Version: 2.2
  * Author: tva Pte. Ltd.
  * Author URI: https://www.tva.sg
  * Text Domain: tva-duplicate-pro
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 // Plugin class
 class tvaDuplicatePro {
     private static $instance = null;
-    private $version = '2.1';
+    private $version = '2.2';
 
     public static function getInstance() {
         if (null === self::$instance) {
@@ -177,5 +177,5 @@ class tvaDuplicatePro {
     }
 }
 
-// Initialisiere das Plugin
+// Initialize the plugin
 tvaDuplicatePro::getInstance();

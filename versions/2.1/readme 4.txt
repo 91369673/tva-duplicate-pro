@@ -1,5 +1,5 @@
 === tva Duplicate Pro ===
-Contributors: tva
+Contributors: tvasg
 Tags: duplicate, clone, copy, post, page, woocommerce
 Requires at least: 5.0
 Tested up to: 6.3
@@ -25,7 +25,7 @@ tva Duplicate Pro allows you to duplicate any post, page, or WooCommerce product
 
 1. Upload the plugin files to the `/wp-content/plugins/tva-duplicate-pro` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Use the 'Duplicate with tva' link that appears in the row actions of posts, pages, and products
+3. Use the 'Duplicate with tva.sg' link that appears in the row actions of posts, pages, and products
 
 == Frequently Asked Questions ==
 
@@ -35,7 +35,7 @@ Yes, the plugin fully supports WooCommerce products including their meta data, i
 
 = Where can I find the duplicate option? =
 
-After activating the plugin, hover over any post, page, or product in their respective list views, and you'll see a "Duplicate with tva" link.
+After activating the plugin, hover over any post, page, or product in their respective list views, and you'll see a "Duplicate with tva.sg" link.
 
 == Screenshots ==
 

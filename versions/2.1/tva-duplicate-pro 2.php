@@ -1,21 +1,21 @@
 <?php
 /**
  * Plugin Name: tva Duplicate Pro
- * Description: Creates copies of pages, posts and WooCommerce products with a single click
+ * Description: Erstellt Kopien von Seiten, Beiträgen und WooCommerce-Produkten mit einem Klick
  * Version: 2.1
- * Author: tva Pte. Ltd.
+ * Author: tva.sg
  * Author URI: https://www.tva.sg
  * Text Domain: tva-duplicate-pro
  */
 
 namespace tvaDuplicatePro;
 
-// Prevent direct access
+// Verhindere direkten Zugriff
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// Plugin class
+// Plugin Klasse
 class tvaDuplicatePro {
     private static $instance = null;
     private $version = '2.1';
@@ -28,7 +28,7 @@ class tvaDuplicatePro {
     }
 
     private function __construct() {
-        // Initialize hooks
+        // Hooks initialisieren
         register_activation_hook(__FILE__, [$this, 'activate']);
         register_deactivation_hook(__FILE__, [$this, 'deactivate']);
         
@@ -46,7 +46,7 @@ class tvaDuplicatePro {
     }
 
     public function deactivate() {
-        // Cleanup if needed
+        // Cleanup wenn nötig
     }
 
     public function checkVersion() {
@@ -68,14 +68,14 @@ class tvaDuplicatePro {
                     basename(__FILE__),
                     'duplicate_nonce'
                 ),
-                __('Duplicate with tva', 'tva-duplicate-pro')
+                __('Duplicate with tva.sg', 'tva-duplicate-pro')
             );
         }
         return $actions;
     }
 
     public function duplicatePostAsDraft() {
-        // Security check
+        // Sicherheitscheck
         if (!isset($_GET['post']) || !isset($_GET['duplicate_nonce'])) {
             wp_die('No post to duplicate has been provided!');
         }
@@ -91,7 +91,7 @@ class tvaDuplicatePro {
             wp_die('Post creation failed, could not find original post.');
         }
 
-        // Create the duplicated post
+        // Erstelle den duplizierten Post
         $new_post_args = array(
             'comment_status' => $post->comment_status,
             'ping_status'    => $post->ping_status,
@@ -110,14 +110,14 @@ class tvaDuplicatePro {
 
         $new_post_id = wp_insert_post($new_post_args);
 
-        // Copy taxonomies
+        // Kopiere Taxonomien
         $taxonomies = get_object_taxonomies($post->post_type);
         foreach ($taxonomies as $taxonomy) {
             $post_terms = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'slugs'));
             wp_set_object_terms($new_post_id, $post_terms, $taxonomy, false);
         }
 
-        // Copy post meta
+        // Kopiere Post Meta
         $post_meta = get_post_meta($post_id);
         foreach ($post_meta as $key => $values) {
             foreach ($values as $value) {
@@ -128,7 +128,7 @@ class tvaDuplicatePro {
             }
         }
 
-        // WooCommerce specific handling
+        // WooCommerce spezifische Behandlung
         if ($post->post_type === 'product') {
             $this->duplicateProductImages($post_id, $new_post_id);
             $this->duplicateProductGallery($post_id, $new_post_id);
@@ -172,7 +172,7 @@ class tvaDuplicatePro {
     }
 
     public function pluginActionLinks($links) {
-        $author_link = '<a href="https://www.tva.sg" target="_blank">By tva</a>';
+        $author_link = '<a href="https://www.tva.sg" target="_blank">By tva.sg</a>';
         return array_merge(array($author_link), $links);
     }
 }

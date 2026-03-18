@@ -3,7 +3,7 @@ Contributors: tva
 Tags: duplicate, clone, copy, post, page, woocommerce
 Requires at least: 5.0
 Tested up to: 6.3
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,12 +44,21 @@ After activating the plugin, hover over any post, page, or product in their resp
 
 == Changelog ==
 
+= 2.2 =
+* Translated plugin from German to English
+* Updated author information to "tva Pte. Ltd."
+* Changed "Duplicate with tva.sg" to "Duplicate with tva"
+* General text and consistency improvements
+
 = 2.1 =
 * Added support for WooCommerce products
 * Improved meta data handling
 * Security improvements with nonce verification
 
 == Upgrade Notice ==
+
+= 2.2 =
+This update includes translation from German to English, updated branding, and text improvements.
 
 = 2.1 =
 Added WooCommerce product support and improved security.
